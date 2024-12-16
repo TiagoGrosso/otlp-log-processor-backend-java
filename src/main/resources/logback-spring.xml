@@ -1,0 +1,22 @@
+<!-- SPDX-FileCopyrightText: Copyright 2024 Dash0 Inc. -->
+
+<configuration>
+	<include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+	<include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
+
+	<springProperty scope="context" name="appName" source="spring.application.name"/>
+
+	<springProfile name="!production">
+		<include resource="org/springframework/boot/logging/logback/base.xml"/>
+	</springProfile>
+
+	<springProfile name="production">
+		<appender name="jsonConsoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+			<encoder class="net.logstash.logback.encoder.LogstashEncoder"/>
+		</appender>
+
+		<root level="INFO">
+			<appender-ref ref="jsonConsoleAppender"/>
+		</root>
+	</springProfile>
+</configuration>

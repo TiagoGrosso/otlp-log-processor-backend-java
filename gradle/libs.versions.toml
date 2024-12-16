@@ -1,0 +1,25 @@
+[versions]
+grpc = "1.68.1"
+opentelemetry = "1.43.0"
+opentelemetryAlpha = "1.36.0-alpha"
+opentelemetryInstrumentation = "2.9.0-alpha"
+springBoot = "3.3.5"
+
+[libraries]
+errorproneCore = { group = "com.google.errorprone", name = "error_prone_core", version = "2.35.1" }
+grpcBom = { group = "io.grpc", name = "grpc-bom", version.ref = "grpc" }
+logstashLogbackEncoder = { group = "net.logstash.logback", name = "logstash-logback-encoder", version = "8.0" }
+opentelemetryAlphaBom = { group = "io.opentelemetry", name = "opentelemetry-bom-alpha", version.ref = "opentelemetryAlpha" }
+opentelemetryApiEvents = { group = "io.opentelemetry", name = "opentelemetry-api-events", version.ref = "opentelemetryAlpha" }
+opentelemetryBom = { group = "io.opentelemetry", name = "opentelemetry-bom", version.ref = "opentelemetry" }
+opentelemetryMicrometer = { group = "io.opentelemetry.instrumentation", name = "opentelemetry-micrometer-1.5", version.ref = "opentelemetryInstrumentation" }
+opentelemetryProto = { group = "io.opentelemetry.proto", name = "opentelemetry-proto", version = "1.3.2-alpha" }
+opentelemetryResources = { group = "io.opentelemetry.instrumentation", name = "opentelemetry-resources", version.ref = "opentelemetryInstrumentation" }
+opentelemetrySemconv = { group = "io.opentelemetry.semconv", name = "opentelemetry-semconv", version = "1.28.0-alpha" }
+
+[plugins]
+errorprone = { id = "net.ltgt.errorprone", version = "4.1.0" }
+forbiddenapis = { id = "de.thetaphi.forbiddenapis", version = "3.8" }
+springBoot = { id = "org.springframework.boot", version.ref = "springBoot" }
+springDependencyManagement = { id = "io.spring.dependency-management", version = "1.1.6" }
+testRetry = { id = "org.gradle.test-retry", version = "1.6.0" }
